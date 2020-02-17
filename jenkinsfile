@@ -19,14 +19,14 @@ pipeline{
 			    sh '''cd /root/.jenkins/workspace/demo_pipeline/TCS'''
 			    sh "ls"
 			}
-			stage("Maven Build1"){
+		stage("Maven Build1"){
 			steps {
-          sh "$PWD"
-          dir('TCS'){
-            sh "$PWD"
+          			sh "$PWD"
+          			dir('TCS'){
+          			 sh "$PWD"
           }
-          sh "$PWD"
-	  sh "mvn clean install"
+          			sh "$PWD"
+				  sh "mvn clean install"
         } 
 		}
 	}}
