@@ -17,6 +17,7 @@ pipeline{
 		stage("Maven Build"){
 			steps{
 			    sh "cd /root/.jenkins/workspace/demo_pipeline/TCS"
+			    sh "ls"
 				sh "mvn clean install"
 			}
 		}
