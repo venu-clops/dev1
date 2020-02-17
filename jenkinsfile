@@ -18,7 +18,7 @@ pipeline{
 			steps{
 			    sh '''cd /root/.jenkins/workspace/demo_pipeline/TCS'''
 			    sh "ls"
-			}
+			}}
 		stage("Maven Build1"){
 			steps {
           			sh "$PWD"
@@ -30,4 +30,4 @@ pipeline{
         } 
 		}
 	}}
-}
+
