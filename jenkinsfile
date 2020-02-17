@@ -16,10 +16,9 @@ pipeline{
 		}
 		stage("Maven Build"){
 			steps{
-			    sh "cd /root/.jenkins/workspace/demo_pipeline/TCS"
-			    sh label: '', script: 'cd /root/.jenkins/workspace/demo_pipeline/TCS'
+			    sh '''cd /root/.jenkins/workspace/demo_pipeline/TCS'''
 			    sh "ls"
-				sh "mvn clean install"
+			    sh "mvn clean install"
 			}
 		}
 	}
