@@ -1,9 +1,23 @@
-pipeline{
+peline{
 	agent any
+	environment{
+	    PATH="/opt/Maven/bin:$PATH"
+	}
 	stages{
 		stage("Welcome"){
 			steps{
 				echo "Welcome to first Declarative pipeline"
+			}
+		}
+		stage("GitCheckout"){
+			steps{
+				git 'https://github.com/Venue007/dev1.git'
+			}
+		}
+		stage("Maven Build"){
+			steps{
+			    sh "cd /root/.jenkins/workspace/demo_pipeline/TCS"
+				sh "mvn clean install"
 			}
 		}
 	}
